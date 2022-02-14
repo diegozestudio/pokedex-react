@@ -1,22 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { getPokemon } from "../actions";
 
-function PokemonForm({ setPokemonId, setLoading, setError }) {
-  const [pokemon, setPokemon] = useState("");
+function PokemonForm() {
+  const [input, setInput] = useState("");
+
+  const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (pokemon !== "") {
-      // Estara cargando por que hará una petición a la API
-      setError(true);
-      setLoading(true);
-      const pokemonID = window.isNaN(parseInt(pokemon))
-        ? pokemon.toLowerCase()
-        : pokemon;
-      setPokemonId(pokemonID);
-      setPokemon("");
+    if (input !== "") {
+      const pokemonID = input.toLowerCase();
+      dispatch(getPokemon(pokemonID));
+      setInput("");
       return;
     }
-    setError(true); //Si manda el formulario vacío, hay un error
   };
 
   return (
@@ -25,10 +23,9 @@ function PokemonForm({ setPokemonId, setLoading, setError }) {
         className="pokemon-input"
         type="text"
         name="pokemon"
-        value={pokemon}
+        value={input}
         placeholder="Busca tu pokemon"
-        //Actualizas el valor del input cuando el usuario teclea
-        onChange={(e) => setPokemon(e.target.value)}
+        onChange={(e) => setInput(e.target.value)}
         autoComplete="off"
       />
       <input type="submit" className="pokemon-btn" value="" />

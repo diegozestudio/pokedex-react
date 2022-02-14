@@ -1,13 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import Pokedex from "./components/Pokedex";
+import { Provider } from "react-redux";
+import store from "./store/index";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Pokedex />
+    <Provider store={store}>
+      <Pokedex />
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );

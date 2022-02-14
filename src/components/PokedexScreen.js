@@ -1,11 +1,30 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import ErrorPokemon from "../images/error.gif";
 import LoadingPokemon from "../images/loading.gif";
 import Stat from "./Stat";
 
-function PokedexScreen({ pokemon, loading, error }) {
-  // Si hay un error en la petición a la API, devuelve este componente.
-  // Recuerda que al hacer un return, el resto de código, no se ejecutará.
+function PokedexScreen() {
+  // const pokemon = useSelector((state) => state.pokemon);
+  // const loading = useSelector((state) => state.loading);
+  // const error = useSelector((state) => state.error);
+
+  // const { pokemon, loading, error } = useSelector((state) => {
+  //   return {
+  //     pokemon: state.pokemon,
+  //     loading: state.loading,
+  //     error: state.error,
+  //   };
+  // });
+
+  // const [pokemon, loading, error] = useSelector((state) => [
+  //   state.pokemon,
+  //   state.loading,
+  //   state.error,
+  // ]);
+
+  const { pokemon, loading, error } = useSelector((state) => state);
+
   if (error) {
     return (
       <div className="pokedex-screen">
@@ -17,16 +36,14 @@ function PokedexScreen({ pokemon, loading, error }) {
       </div>
     );
   }
-
-  // Si ya pasamos la validación del error...
   return (
     <div className="pokedex-screen">
-      {!pokemon || loading ? ( // Si no hay pokemon o si esta cargando
+      {!pokemon || loading ? (
         <img
           src={LoadingPokemon}
           alt="Aun no hay ningun pokemon"
           className="pokedex-no-screen"
-        /> // Todo cool, entonces devuelve un lindo pokemon
+        />
       ) : (
         <div className="pokemon-info">
           <h2 className="pokemon-name">{pokemon.name}</h2>

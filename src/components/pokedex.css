@@ -31,36 +31,36 @@ ul {
   display: flex;
   align-items: center;
   height: 100vh;
-  overflow: hidden;
+  /* overflow: hidden; */
   margin: 0;
-  font-family: system-ui;
+  /* font-family: system-ui; */
 }
 
 /*------------------*/
 /* Pokedex */
 /*------------------*/
 .pokedex {
-  perspective: 1000px;
+  /* perspective: 1000px; */
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */
   height: 31rem;
   width: 23rem;
-  margin: 0 auto;
-  overflow: initial;
-  box-shadow: 0 2px 12px -2px rgba(255, 0, 0, 0.4);
+  margin: auto;
+  /* overflow: initial; */
+  /* box-shadow: 0 2px 12px -2px rgba(255, 0, 0, 0.4); */
 }
 
-.pokedex:hover .pokedex-right-front,
+/* .pokedex:hover .pokedex-right-front,
 .pokedex.is-active .pokedex-right-front {
   transform: rotateY(180deg);
-}
+} */
 
-.pokedex:hover .pokedex-right-back,
+/* .pokedex:hover .pokedex-right-back,
 .pokedex.is-active .pokedex-right-back {
   transform: rotateY(0);
-}
+} */
 
-.pokedex-right-front {
+/* .pokedex-right-front {
   background: var(--red);
   height: calc(100% - 6rem);
   width: inherit;
@@ -76,9 +76,9 @@ ul {
   box-sizing: border-box;
   border-radius: 10px 0 0px 10px;
   border-left: 10px solid #9b0a21;
-}
+} */
 
-.pokedex-right-front:before {
+/* .pokedex-right-front:before {
   height: 5rem;
   position: absolute;
   bottom: 100%;
@@ -87,9 +87,9 @@ ul {
   right: 0;
   border-top: 1px solid black;
   content: "";
-}
+} */
 
-.pokedex-right-front:after {
+/* .pokedex-right-front:after {
   content: "";
   border-right: 2.5rem solid var(--red);
   border-bottom: 2.5rem solid var(--red);
@@ -99,9 +99,9 @@ ul {
   right: calc(100% - 9rem);
   bottom: 100%;
   filter: drop-shadow(0 -1px 0 black);
-}
+} */
 
-.pokedex-right-back {
+/* .pokedex-right-back {
   background: var(--red);
   height: calc(100% - 6rem);
   width: inherit;
@@ -122,9 +122,9 @@ ul {
   padding: 20px;
   box-sizing: border-box;
   display: flex;
-}
+} */
 
-.pokedex-right-back:before {
+/* .pokedex-right-back:before {
   width: calc(100% - 9rem);
   height: 5rem;
   position: absolute;
@@ -133,9 +133,9 @@ ul {
   left: 0;
   border-top: 1px solid black;
   content: "";
-}
+} */
 
-.pokedex-right-back:after {
+/* .pokedex-right-back:after {
   content: "";
   border-left: 2.5rem solid var(--red);
   border-bottom: 2.5rem solid var(--red);
@@ -147,19 +147,19 @@ ul {
   left: calc(100% - 9rem);
   bottom: 100%;
   filter: drop-shadow(0 -1px 0 black);
-}
+} */
 
 .light {
-  border: 1px solid black;
-  box-shadow: -2px 2px 0 rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  /* box-shadow: -2px 2px 0 rgba(255, 255, 255, 0.5); */
   width: 20px;
   height: 20px;
-  background: gray;
+  /* background: gray; */
   border-radius: 50%;
 }
 
 .light.is-animated {
-  animation: 0.3s light linear infinite;
+  animation: 0.45s light linear infinite;
 }
 
 @keyframes light {
@@ -185,6 +185,7 @@ ul {
 }
 .light.is-large {
   width: 80px;
+  height: 10px;
   border-radius: 20px;
 }
 
@@ -203,41 +204,42 @@ ul {
 .light.is-orange {
   background-color: var(--orange);
 }
-
 .light.is-yellow {
   background-color: var(--yellow);
 }
 
-.pokedex-left {
+.pokedex-body {
   background: var(--red);
   height: inherit;
   width: inherit;
-  border-radius: 10px 0 0 10px;
-  border: 1px solid black;
-  border-right: 10px solid black;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  /* border-right: 10px solid black; */
   box-sizing: border-box;
   padding: 15px 20px;
 }
 
-.pokedex-left-top {
+.pokedex-body-top {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: flex-start;
 }
 
-.pokedex-left-top > * {
+.pokedex-body-top > * {
   margin-right: 0.7em;
 }
 
-.pokedex-left-bottom-lights {
+.pokedex-body-bottom-lights {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: flex-start;
 }
 
-.pokedex-left-bottom {
+.pokedex-body-bottom {
   margin-top: 1em;
 }
 
-.pokedex-left-bottom-lights > * {
+.pokedex-body-bottom-lights > * {
   margin-right: 0.8em;
 }
 
@@ -246,15 +248,15 @@ ul {
 /*---------------------*/
 .pokedex-screen-container {
   background: #b0b0b0;
-  border-radius: 10px 10px 0 0;
-  border: 1px solid black;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
   margin: 20px 0;
   height: 50%;
   padding: 0.8rem;
 }
 .pokedex-screen {
   background: white;
-  border: 2px solid black;
+  border: 1.5px solid rgba(0, 0, 0, 0.55);
   border-radius: 10px;
   height: 100%;
   display: flex;
@@ -303,9 +305,8 @@ ul {
 /* Pokedex Form */
 /*---------------------*/
 .pokemon-form {
-  display: grid;
-  grid-template-columns: 1fr 50px;
-  column-gap: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
   margin-top: 1em;
 }
 
@@ -314,7 +315,7 @@ ul {
   padding: 10px;
   background-color: var(--orange);
   border: none;
-  border: 1px solid black;
+  border: 1px solid rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   outline: 0;
   font-size: 1em;
@@ -340,42 +341,34 @@ ul {
   width: 40px;
   height: 40px;
   position: relative;
-  background: radial-gradient(
-    hsl(0, 100%, 70%),
-    hsl(0, 97%, 25%)
-  ); /* Standard syntax */
+  background: radial-gradient(hsl(0, 100%, 70%), hsl(0, 97%, 25%));
   text-shadow: 0 -1px 0 #c30707;
   color: white;
-  border: solid 1px hsl(0, 100%, 20%);
+  border: solid 1px hsl(0, 100%, 30%);
   border-radius: 100%;
   z-index: 1;
 
   outline: none;
 
-  box-shadow: inset 0 0.5px 0 hsl(0, 100%, 50%), 0 1px 0 hsl(0, 100%, 20%),
+  /* box-shadow: inset 0 0.5px 0 hsl(0, 100%, 50%), 0 1px 0 hsl(0, 100%, 20%),
     0 1.5px 0 hsl(0, 100%, 18%), 0 2px 0 hsl(0, 100%, 16%),
     0 2.5px 0 hsl(0, 100%, 14%), 0 3px 0 hsl(0, 100%, 12%),
     0 3.5px 0 hsl(0, 100%, 10%), 0 4px 0 hsl(0, 100%, 8%),
-    0 4.5px 0 hsl(0, 100%, 6%);
+    0 4.5px 0 hsl(0, 100%, 6%); */
 }
 
 .pokemon-btn:hover {
-  background: radial-gradient(
-    hsl(0, 100%, 70%),
-    hsl(0, 97%, 35%)
-  ); /* Standard syntax */
+  background: radial-gradient(hsl(0, 100%, 70%), hsl(0, 97%, 35%));
+  border: solid 1px hsl(0, 100%, 35%);
 }
 
 .pokemon-btn:active {
-  background: radial-gradient(
-    hsl(0, 100%, 80%),
-    hsl(0, 100%, 45%)
-  ); /* Standard syntax */
+  background: radial-gradient(hsl(0, 100%, 80%), hsl(0, 100%, 45%));
+  border: solid 1px hsl(0, 100%, 40%);
+  top: 1px;
 
-  top: 2px;
-
-  box-shadow: inset 0 0.5px 0 hsl(0, 100%, 50%), 0 1px 0 hsl(0, 100%, 20%),
+  /* box-shadow: inset 0 0.5px 0 hsl(0, 100%, 50%), 0 1px 0 hsl(0, 100%, 20%),
     0 1.5px 0 hsl(0, 100%, 18%), 0 2px 0 hsl(0, 100%, 16%),
     0 2.5px 0 hsl(0, 100%, 14%), 0 3px 0 hsl(0, 100%, 12%),
-    0 3.5px 0 hsl(0, 100%, 10%);
+    0 3.5px 0 hsl(0, 100%, 10%); */
 }
