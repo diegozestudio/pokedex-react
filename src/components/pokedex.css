@@ -33,7 +33,7 @@ ul {
   height: 100vh;
   /* overflow: hidden; */
   margin: 0;
-  /* font-family: system-ui; */
+  font-family: system-ui;
 }
 
 /*------------------*/
@@ -306,7 +306,8 @@ ul {
 /*---------------------*/
 .pokemon-form {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  flex-wrap: nowrap;
   gap: 0.5rem;
   margin-top: 1em;
 }
