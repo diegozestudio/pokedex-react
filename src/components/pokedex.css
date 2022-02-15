@@ -306,9 +306,7 @@ ul {
 /*---------------------*/
 .pokemon-form {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: nowrap;
-  gap: 0.5rem;
+  gap: 0.5em;
   margin-top: 1em;
 }
 
